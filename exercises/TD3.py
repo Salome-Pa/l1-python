@@ -29,9 +29,9 @@ def affichePluriel(val,mot):
 
 def afficheTemps(temps):
     affichePluriel(temps[0],"jour")
-    affichePluriel(temps[0],"jour")
-    affichePluriel(temps[0],"jour")
-    affichePluriel(temps[0],"jour")
+    affichePluriel(temps[1],"heure")
+    affichePluriel(temps[2],"minute")
+    affichePluriel(temps[3],"seconde")
     print(" ")
     
 afficheTemps((1,0,14,23)) 
@@ -54,8 +54,8 @@ def proportionTemps(temps,proportion):
     return secondeEnTemps(int(tempsEnSeconde(temps)*proportion))
 
     #tempsEnSeconde(temps)*proportion (0.2) --> nb sec (pas float mais int(nb seconde)
-     afficheTemps(proportionTemps((2, 0, 36, 0), 0.2))
-     afficheTemps(proportionTemps(proportion = 0.2, temps = (2, 0, 36, 0)))
+    afficheTemps(proportionTemps((2, 0, 36, 0), 0.2))
+    afficheTemps(proportionTemps(proportion = 0.2, temps = (2, 0, 36, 0)))
 
 
 
