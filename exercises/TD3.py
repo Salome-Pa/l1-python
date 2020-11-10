@@ -1,3 +1,21 @@
+
+def affichePluriel(val,mot):
+    if val != 0:
+        print(" ",val,mot,end = "")
+    if val > 1:
+        print("s",end = "")
+
+def afficheTemps(temps):
+    affichePluriel(temps[0],"jour")
+    affichePluriel(temps[0],"jour")
+    affichePluriel(temps[0],"jour")
+    affichePluriel(temps[0],"jour")
+    print(" ")
+    
+afficheTemps((1,0,14,23)) 
+
+
+
 def demandeTemps():
     jour = int(input("combien de jours"))
     heure = int(input("combien d heures"))
@@ -26,7 +44,7 @@ def tempsEnDate(temps):
     annee = 1970 + jour // 365
     jour %= 365
     return (annee, jour, heure, minute, seconde)
-    
+
 
 def afficheDate(date = -1):
     if date == -1:
@@ -51,7 +69,7 @@ def bisextile(jour):
         else:
             jour -= 365
         annee += 1
-        
+
 bisextile(20000)
 
 
@@ -85,7 +103,7 @@ def verifie(liste_temps):
     temps_total = 0
     for elem in liste_temps:
         if(tempsEnSeconde(elem) > tempsEnSeconde((0, 48, 0, 0)):
-            return False 
+            return False
         temps_total += tempsEnSeconde(elem)
     return temps_total <= tempsEnSeconde(0, 140, 0, 0)
 
