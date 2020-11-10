@@ -38,12 +38,33 @@ Ecrire une fonction qui demande à l'utilisateur de rentrer un nombre de jours, 
 
 (Optionnel) Au lieu d'arêter le programme, demander de rentrer une nouvelle valeur, tant que ce n'est pas une valeur correcte.
 
-In [ ]:
+def demandeTemps():
+    jour = int(input("combien de jours"))
+    heure = int(input("combien d heures"))
+    minute = int(input("combien de minutes"))
+    seconde = int(input("combien de sec"))
+    if (seconde > 59 or minute > 59 or heure > 23):
+        print("entree mal formee, ce n est pas une date")
+        return (0,0,0,0)
+    return (jour,heure,minute,seconde)
+afficheTemps(demandeTemps())
+
+
+
+'''In [ ]:
 def demandeTemps():
     pass
 
 afficheTemps(demandeTemps())
-On veut être capable d'additionner deux temps. Donner une fonction qui fait ce calcul, en utilisant les fonctions précédentes.
+On veut être capable d'additionner deux temps. Donner une fonction qui fait ce calcul, en utilisant les fonctions précédentes.'''
+
+def sommeTemps(temps1,temps2):
+     return secondeEnTemps(tempsEnSeconde(temps1) + tempsEnSeconde(temps2))
+
+sommeTemps((2,3,4,25),(5,22,57,1))
+
+
+
 
 In [ ]:
 def sommeTemps(temps1,temps2):
@@ -52,7 +73,15 @@ def sommeTemps(temps1,temps2):
 sommeTemps((2,3,4,25),(5,22,57,1))
 On veut maintenant calculer un pourcentage d'un temps. Par exemple, 20% de 2 jours et 36 minutes correspond à 9 heures, 43 minutes et 12 secondes.
 
+def proportionTemps(temps,proportion):
+    return secondeEnTemps(int(tempsEnSeconde(temps)*proportion))
+
+    #tempsEnSeconde(temps)*proportion (0.2) --> nb sec (pas float mais int(nb seconde)
+     afficheTemps(proportionTemps((2,0,36,0),0.2))
+     afficheTemps(proportionTemps(proportion = 0.2, temps = (2,0,36,0)))
 Implémenter la fonction proportionTemps puis appeler cette fonction en échangeant l'ordre des arguments mais en les nommant.
+
+
 
 In [ ]:
 def proportionTemps(temps,proportion):
