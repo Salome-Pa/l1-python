@@ -9,12 +9,13 @@ def demandeTemps():
     return (jour,heure,minute,seconde)
 afficheTemps(demandeTemps())
 
+
 def proportionTemps(temps,proportion):
     return secondeEnTemps(int(tempsEnSeconde(temps)*proportion))
 
     #tempsEnSeconde(temps)*proportion (0.2) --> nb sec (pas float mais int(nb seconde)
      afficheTemps(proportionTemps((2, 0, 36, 0), 0.2))
-     afficheTemps(proportionTemps(proportion = 0.2, temps = (2, 0, 36 ,0)))
+     afficheTemps(proportionTemps(proportion = 0.2, temps = (2, 0, 36, 0)))
 
 
 
@@ -25,13 +26,14 @@ def tempsEnDate(temps):
     annee = 1970 + jour // 365
     jour %= 365
     return (annee, jour, heure, minute, seconde)
+    
 
 def afficheDate(date = -1):
     if date == -1:
         date = tempsEnDate(secondeEnTemps(int(time.time())))
     annee, jour, heure, minute, seconde = date
-    print("ANNEE", annee, end = " ")
-    afficheTemps((jour%365, heure, minute, seconde))
+    print("ANNEE", annee, end=" ")
+    afficheTemps((jour % 365, heure, minute, seconde))
 
 temps = secondeEnTemps(1000000000)
 afficheTemps(temps)
