@@ -85,7 +85,7 @@ afficheDate()
 def bisextile(jour):
     annee = 1970
     while(jour >= 0):
-        if(annee % 4 == 0 and (annee % 100 != 0 or annee % 400 == 0):
+        if(annee % 4 == 0 and (annee % 100 != 0 or annee % 400 == 0)):
             print("Annee",annee,"bissex")
             jour -= 366
         else:
@@ -101,7 +101,7 @@ def nombreBisextile(jour):
     annee = 1970
     b = 0
     while (jour >= 0):
-        if(annee % 4 == 0 and (annee % 100 != 0 annee % 400 == 0)):
+        if(annee % 4 == 0 and (annee % 100 != 0 or annee % 400 == 0)):
             b += 1
             jour -= 366
         else:
