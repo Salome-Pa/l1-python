@@ -127,7 +127,7 @@ def verifie(liste_temps):
         if(tempsEnSeconde(elem) > tempsEnSeconde((0, 48, 0, 0)):
             return False
         temps_total += tempsEnSeconde(elem)
-    return temps_total <= tempsEnSeconde(0, 140, 0, 0)
+    return temps_total <= tempsEnSeconde((0, 140, 0, 0))
 
 
 liste_temps = [[1, 2, 39, 34],[0, 1, 9 ,4],[0, 29, 39, 51],[0, 31, 13, 46]] 
