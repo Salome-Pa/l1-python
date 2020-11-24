@@ -76,6 +76,6 @@ def estNormal(carre):
             if carre[i][j] in nombres :
                 nombres.remove(carre[i][j])
     return len(nombres) == 0
-    
+
 print(estNormal(carre_mag))
 print(estNormal(carre_pas_mag))
