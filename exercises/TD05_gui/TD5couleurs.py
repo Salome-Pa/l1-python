@@ -26,6 +26,9 @@ def ecran_aleatoire():
             b = random.randint(0,255)
             draw_pixel(i, u, get_color(r, g, b))
 
+#def degrade_gris()
+#def degrade_2D()
+
 
 import tkinter as tk
 
