@@ -26,8 +26,27 @@ def ecran_aleatoire():
             b = random.randint(0,255)
             draw_pixel(i, u, get_color(r, g, b))
 
-#def degrade_gris()
-#def degrade_2D()
+def degrade_gris():
+    r = 0
+    g = 0
+    b = 0
+    for i in range(256):
+        for u in range(256):
+            r += 1
+            g += 1
+            b += 1
+            draw_pixel(i, u, get_color(r, g, b))
+
+def degrade_2D():
+    r = 255
+    g = 0
+    b = 0
+    for i in range(256):
+        for u in range(256):
+            r -= 1
+            b += 1
+            draw_pixel(i, u, get_color(r, g, b))
+
 
 
 import tkinter as tk
@@ -38,8 +57,8 @@ racine.title("dessin") # titre
 carre_noir = tk.Canvas(racine, bg= "black", height=256, width= 256) # création widget
 draw_pixel(i, j, get_color(r, g, b))
 bouton2 = tk.Button(racine, text="aleatoire", font = ("helvetica", "10"), command = ecran_aleatoire)
-bouton3 = tk.Button(racine, text="degrade gris", font = ("helvetica", "10") )
-bouton4 = tk.Button(racine, text="degrade 2D", font = ("helvetica", "10") )
+bouton3 = tk.Button(racine, text="degrade gris", font = ("helvetica", "10"),command = degrade_gris )
+bouton4 = tk.Button(racine, text="degrade 2D", font = ("helvetica", "10"), command = degrade_2D)
 
 
 bouton2.grid(column=0, row=1)
