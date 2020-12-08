@@ -1,8 +1,8 @@
 import tkinter as tk
 import random
 
-racine = tk.Tk() # Création de la fenêtre racine
-racine.title("dessin") # titre
+racine = tk.Tk()# Création de la fenêtre racine
+racine.title("dessin")# titre
 
 couleur_base = "blue"
 def couleur():
@@ -25,7 +25,7 @@ def fct_croix():
     carre_noir.create_line((B, D),(100+B, 100+D), fill= couleur_base, width=3)
     carre_noir.create_line((B+100, D),(B, D+100), fill= couleur_base, width=3)
 
-carre_noir = tk.Canvas(racine, bg="black", height=600, width= 600) # création widget
+carre_noir = tk.Canvas(racine, bg="black", height=600, width= 600)# création widget
 bouton1 = tk.Button(racine, text="couleur", font = ("helvetica", "10"), command= couleur)
 bouton2 = tk.Button(racine, text="cercle", font = ("helvetica", "10"), command = fct_cercle)
 bouton3 = tk.Button(racine, text="carre", font = ("helvetica", "10"), command = fct_carre)
@@ -34,11 +34,11 @@ bouton4 = tk.Button(racine, text="croix", font = ("helvetica", "10"), command = 
 
 
 
-bouton1.grid(column=1, row=0) # position widget
+bouton1.grid(column=1, row=0)# position widget
 bouton2.grid(column=0, row=1)
 bouton3.grid(column=0, row=2)
 bouton4.grid(column=0, row=3)
 carre_noir.grid(column=1, row=1, rowspan=3)
 
 
-racine.mainloop() # Lancement de la boucle principale
+racine.mainloop()# Lancement de la boucle principale
