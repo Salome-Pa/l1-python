@@ -45,6 +45,7 @@ def degrade_2D():
         for u in range(256):
             r -= 1
             b += 1
+            g = 0
             draw_pixel(i, u, get_color(r, g, b))
 
 
