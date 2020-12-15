@@ -5,48 +5,44 @@ r = int(input("valeur de r : "))
 g = int(input("valeur de g : "))
 b = int(input("valeur de b : "))
 
-def get_color(r, g, b):
-    """ Retourne une couleur à partir de ses composantes r, g, b entre 0 et 255"""
-    return '#{:02x}{:02x}{:02x}'.format(r, g, b)
+import random
 
 i = int(input("coordos i"))
 j = int(input("coordos j"))
 
+def get_color(r, g, b):
+    """ Retourne une couleur à partir de ses composantes r, g, b entre 0 et 255"""
+    return '#{:02x}{:02x}{:02x}'.format(r, g, b)
+
 def draw_pixel(i, j, color):
     """pixel (i,j) color"""
-    carre_noir.create_rectangle(i,j,i - 1,j - 1, outline=color)
-
-import random
+    carre_noir.create_line((i,j), (i+j, j), fill=color)
+    '''carre_noir.create_rectangle(i,j,i - 1,j - 1, outline=color)'''
 
 def ecran_aleatoire():
     for i in range(256):
+        for j in range(256):
+            color = get_color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+            draw_pixel(i, j, color)
+    '''for i in range(256):
         for u in range(256):
             r = random.randint(0,255)
             g = random.randint(0,255)
             b = random.randint(0,255)
-            draw_pixel(i, u, get_color(r, g, b))
+            draw_pixel(i, u, get_color(r, g, b))'''
 
 def degrade_gris():
-    r = 0
-    g = 0
-    b = 0
     for i in range(256):
-        for u in range(256):
-            r += 1
-            g += 1
-            b += 1
-            draw_pixel(i, u, get_color(r, g, b))
+        color = get_color(i, i, i)
+        for j in range(256):
+            draw_pixel(i, j, color)
+                     
 
 def degrade_2D():
-    r = 255
-    g = 0
-    b = 0
     for i in range(256):
-        for u in range(256):
-            r -= 1
-            b += 1
-            g = 0
-            draw_pixel(i, u, get_color(r, g, b))
+        for j in range(256):
+            color = get_color(i,0,j)
+            draw_pixel(i, j, color)
 
 
 
